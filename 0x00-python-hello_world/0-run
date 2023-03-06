@@ -1,20 +1,2 @@
 #!/bin/bash
-
-# Get the Python script name from the environment variable
-PYSCRIPT=$PYFILE
-
-# Check if the PYSCRIPT variable is set
-if [ -z "$PYSCRIPT" ]; then
-    echo "Error: PYFILE environment variable not set."
-    exit 1
-fi
-
-# Check if the Python script file exists
-if [ ! -f "$PYSCRIPT" ]; then
-    echo "Error: $PYSCRIPT file not found."
-  exit 1
-fi
-
-# Run the Python script
-python "$PYSCRIPT"
-
+python3 $PYFILE
