@@ -22,4 +22,6 @@ def roman_to_int(roman_string):
 		else:
 			result += current_value
 		prev = current_value
+	if result > 3999:
+		return 0
 	return result
