@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 """
 This module provides a basic implemantation of a class
 """
@@ -13,4 +15,3 @@ class Square:
         None
     '''
     pass
-
