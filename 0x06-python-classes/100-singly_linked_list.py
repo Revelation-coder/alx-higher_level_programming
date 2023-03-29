@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 '''this module defines class Node and class SinglyLinkedList'''
+
+
 class Node:
     '''initialises node class'''
     def __init__(self, data, next_node=None):
@@ -32,6 +34,8 @@ class Node:
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self._next_node = value
+
+
 class SinglyLinkedList:
     '''class do define a singlylinkedlist'''
     def __init__(self):
@@ -55,8 +59,8 @@ class SinglyLinkedList:
             self.head = new_node
         else:
             current_node = self.head
-            while current_node.next_node is not None and current_node.next_node.data < value:
+            while current_node.next_node is not None \
+               and current_node.next_node.data < value:
                 current_node = current_node.next_node
             new_node.next_node = current_node.next_node
             current_node.next_node = new_node
-
