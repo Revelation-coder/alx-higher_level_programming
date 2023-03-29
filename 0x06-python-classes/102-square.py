@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 '''This module defines square  class'''
+
+
 class Square:
     '''Initialize a square class'''
     def __init__(self, size=0):
@@ -44,6 +46,5 @@ class Square:
         return self.area() < other.area()
 
     def __le__(self, other):
-       '''Function to compare area'''
-       return self.area() <= other.area()
-
+        '''Function to compare area'''
+        return self.area() <= other.area()
