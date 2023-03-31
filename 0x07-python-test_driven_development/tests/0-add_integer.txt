@@ -1,0 +1,63 @@
+# Test case 1: Add two integers
+assert add_integer(2, 3) == 5
+
+# Test case 2: Add an integer and a float
+assert add_integer(2, 3.0) == 5
+
+# Test case 3: Add two floats
+assert add_integer(2.0, 3.0) == 5
+
+# Test case 4: Add an integer and a string
+try:
+    add_integer(2, "3")
+    assert False, "TypeError not raised"
+except TypeError as e:
+    assert str(e) == "b must be an integer or float", f"Wrong error message: {e}"
+
+# Test case 5: Add a float and a string
+try:
+    add_integer(2.0, "3")
+    assert False, "TypeError not raised"
+except TypeError as e:
+    assert str(e) == "b must be an integer or float", f"Wrong error message: {e}"
+
+# Test case 6: Add two strings
+try:
+    add_integer("2", "3")
+    assert False, "TypeError not raised"
+except TypeError as e:
+    assert str(e) == "a must be an integer or float", f"Wrong error message: {e}"
+    
+# Test case 7: Add a string and an integer
+try:
+    add_integer("2", 3)
+    assert False, "TypeError not raised"
+except TypeError as e:
+    assert str(e) == "a must be an integer or float", f"Wrong error message: {e}"
+
+# Test case 8: Add a float and a None value
+try:
+    add_integer(2.0, None)
+    assert False, "TypeError not raised"
+except TypeError as e:
+    assert str(e) == "b must be an integer or float", f"Wrong error message: {e}"
+    
+# Test case 9: Add two None values
+try:
+    add_integer(None, None)
+    assert False, "TypeError not raised"
+except TypeError as e:
+    assert str(e) == "a must be an integer or float", f"Wrong error message: {e}"
+
+# Test case 10: Add one integer with default value
+assert add_integer(2) == 100
+
+# Test case 11: Add one float with default value
+assert add_integer(2.0) == 100
+
+# Test case 12: Add two negative integers
+assert add_integer(-2, -3) == -5
+
+# Test case 13: Add two large integers
+assert add_integer(2147483647, 1) == 2147483648
+
