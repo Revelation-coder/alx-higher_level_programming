@@ -11,7 +11,7 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle instance with the given width and height"""
+        """Initialize a new Rectangle instance given width and height"""
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
