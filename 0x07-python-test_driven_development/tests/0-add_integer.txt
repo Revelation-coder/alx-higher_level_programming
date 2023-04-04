@@ -1,63 +1,71 @@
-# Test case 1: Add two integers
-assert add_integer(2, 3) == 5
+The ``0-add_integer`` module
+============================
 
-# Test case 2: Add an integer and a float
-assert add_integer(2, 3.0) == 5
+Using ``add_integer``
+---------------------
 
-# Test case 3: Add two floats
-assert add_integer(2.0, 3.0) == 5
+This is an example text file in reStructuredText format. First import
+``add_integer`` from the ``0-add_integer`` module:
 
-# Test case 4: Add an integer and a string
-try:
-    add_integer(2, "3")
-    assert False, "TypeError not raised"
-except TypeError as e:
-    assert str(e) == "b must be an integer or float", f"Wrong error message: {e}"
+>>> add_integer = __import__('0-add_integer').add_integer
 
-# Test case 5: Add a float and a string
-try:
-    add_integer(2.0, "3")
-    assert False, "TypeError not raised"
-except TypeError as e:
-    assert str(e) == "b must be an integer or float", f"Wrong error message: {e}"
+Now use it:
 
-# Test case 6: Add two strings
-try:
-    add_integer("2", "3")
-    assert False, "TypeError not raised"
-except TypeError as e:
-    assert str(e) == "a must be an integer or float", f"Wrong error message: {e}"
-    
-# Test case 7: Add a string and an integer
-try:
-    add_integer("2", 3)
-    assert False, "TypeError not raised"
-except TypeError as e:
-    assert str(e) == "a must be an integer or float", f"Wrong error message: {e}"
+>>> add_integer(2, 3)
+5
 
-# Test case 8: Add a float and a None value
-try:
-    add_integer(2.0, None)
-    assert False, "TypeError not raised"
-except TypeError as e:
-    assert str(e) == "b must be an integer or float", f"Wrong error message: {e}"
-    
-# Test case 9: Add two None values
-try:
-    add_integer(None, None)
-    assert False, "TypeError not raised"
-except TypeError as e:
-    assert str(e) == "a must be an integer or float", f"Wrong error message: {e}"
+>>> add_integer(100.3, -2)
+98
 
-# Test case 10: Add one integer with default value
-assert add_integer(2) == 100
+>>> add_integer(-True, False)
+-1
 
-# Test case 11: Add one float with default value
-assert add_integer(2.0) == 100
+>>> add_integer(-True, -False)
+-1
 
-# Test case 12: Add two negative integers
-assert add_integer(-2, -3) == -5
+>>> add_integer(True, False)
+1
 
-# Test case 13: Add two large integers
-assert add_integer(2147483647, 1) == 2147483648
+>>> add_integer(True, -False)
+1
 
+>>> add_integer(100.3, 100.3)
+200
+
+>>> add_integer("school", 100.3)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer("Holberton", "School")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(None, "School")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(5.25, 3.3)
+8
+
+>>> add_integer(10, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer("adc", 10)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(float('inf'),8)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('NaN'), 7)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
