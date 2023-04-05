@@ -2,6 +2,8 @@
 """
 Module for locked class
 """
+
+
 class LockedClass:
     '''
     class for lockedclass
