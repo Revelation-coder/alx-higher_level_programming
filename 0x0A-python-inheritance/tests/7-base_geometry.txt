@@ -1,0 +1,51 @@
+Importing the class from the module:
+>>> BaseGeometry = __import__("6-base_geometry").BaseGeometry
+
+Checking for module docstring:
+>>> m = __import__("6-base_geometry").__doc__
+>>> len(m) > 1
+True
+
+Checking for class docstring:
+>>> c = __import__("6-base_geometry").BaseGeometry.__doc__
+>>> len(c) > 1
+True
+
+Checking for method docstring:
+>>> f = __import__("6-base_geometry").BaseGeometry.area.__doc__
+>>> len(f) > 1
+True
+>>> f = __import__("6-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(f) > 1
+True
+
+Checking given test case for BaseGeometry class:
+>>> bg = BaseGeometry()
+>>> with self.assertRaises(Exception) as e:
+...     bg.area()
+>>> str(e.exception)
+'area() is not implemented'
+
+>>> bg = BaseGeometry()
+>>> with self.assertRaises(TypeError) as e:
+...     bg.integer_validator("height", "not an int")
+>>> str(e.exception)
+'height must be an integer'
+
+>>> bg = BaseGeometry()
+>>> with self.assertRaises(ValueError) as e:
+...     bg.integer_validator("height", -1)
+>>> str(e.exception)
+'height must be greater than 0'
+
+>>> bg = BaseGeometry()
+>>> with self.assertRaises(TypeError) as e:
+...     bg.integer_validator("width", [1, 2, 3])
+>>> str(e.exception)
+'width must be an integer'
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("width", 5)
+>>> bg.__dict__["width"]
+5
+
