@@ -28,20 +28,3 @@ class Student:
             return self.__dict__
         else:
             return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
-    
-    def reload_from_json(self, json):
-        """
-        Replace all attributes of the Student instance with the values in the given JSON dictionary.
-        :param json: A JSON dictionary representation of a Student instance.
-        :type json: dict
-        """
-        for key, value in json.items():
-            setattr(self, key, value)
-
-    def __str__(self):
-        """
-        Return a string representation of a Student instance.
-        :return: A string representation of a Student instance.
-        :rtype: str
-        """
-        return "[Student] {} {} - {}".format(self.first_name, self.last_name, self.age)
