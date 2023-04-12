@@ -2,10 +2,13 @@
 """
 This module contains a function that writes a given string to a file.
 
-The function takes in a file name and a text string and writes the string to the file.
-If the file already exists, the function overwrites its contents. If it does not exist,
-the function creates the file. The function returns the number of characters written.
+The function takes in a file name and a text string
+Writes the string to the file.
+If the file already exists, the function overwrites its contents.
+Else the function creates the file.
+The function returns the number of characters written.
 """
+
 
 def write_file(filename="", text=""):
     """
