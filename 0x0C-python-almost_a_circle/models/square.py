@@ -14,7 +14,7 @@ class Square(Rectangle):
         """Overriding the __str__ method"""
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
-     def size(self):
+    def size(self):
         """
         Getter for size
         """

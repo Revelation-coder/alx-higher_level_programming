@@ -70,7 +70,8 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-     def area(self):
+
+    def area(self):
         """Compute the area of the rectangle"""
         return self.width * self.height
 
@@ -83,8 +84,7 @@ class Rectangle(Base):
     def __str__(self):
         """Return a string representation of the rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height
-        )
+            self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """Update the rectangle attributes"""
@@ -100,7 +100,8 @@ class Rectangle(Base):
                     self.x = arg
                 elif i == 4:
                     self.y = arg
-     def update(self, *args, **kwargs):
+
+    def update(self, *args, **kwargs):
         """Update the Rectangle instance attributes."""
         if args:
             attrs = ["id", "width", "height", "x", "y"]

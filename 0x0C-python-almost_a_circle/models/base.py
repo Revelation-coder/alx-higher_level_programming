@@ -7,12 +7,11 @@ import turtle
 
 class Base:
     """The base class for all other classes in this project."""
-    
     __nb_objects = 0  # private class attribute
-    
+
     def __init__(self, id=None):
         """Constructor for the Base class."""
-        
+
         if id is not None:
             self.id = id
         else:
@@ -82,39 +81,5 @@ class Base:
                 if isinstance(obj, Rectangle):
                     row = [obj.id, obj.width, obj.height, obj.x, obj.y]
                 elif isinstance(obj, Square):
-                    row = [obj.id, obj.size
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        window = turtle.Screen()
-        window.bgcolor("white")
-        window.title("Drawing Rectangles and Squares")
-        pen = turtle.Turtle()
-        pen.speed(0)
-        pen.penup()
-
-        for rectangle in list_rectangles:
-            pen.goto(rectangle.x, rectangle.y)
-            pen.pendown()
-            pen.color("red")
-            pen.begin_fill()
-            for i in range(2):
-                pen.forward(rectangle.width)
-                pen.left(90)
-                pen.forward(rectangle.height)
-                pen.left(90)
-            pen.end_fill()
-            pen.penup()
-
-        for square in list_squares:
-            pen.goto(square.x, square.y)
-            pen.pendown()
-            pen.color("green")
-            pen.begin_fill()
-            for i in range(4):
-                pen.forward(square.size)
-                pen.left(90)
-            pen.end_fill()
-            pen.penup()
-
-        turtle.done()
+                    row = [obj.id, obj.size, obj.x, obj.y]
+                writer.writerow(row)
