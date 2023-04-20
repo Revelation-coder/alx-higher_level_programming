@@ -34,6 +34,12 @@ class Base:
             file.write(cls.to_json_string(list_dicts))
 
     @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or json_string == "":
+            return []
+        return json.loads(json_string)
+
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON string representation of list_dictionaries."""
         if list_dictionaries is None or len(list_dictionaries) == 0:
