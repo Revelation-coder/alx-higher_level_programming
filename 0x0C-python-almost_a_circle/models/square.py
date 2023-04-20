@@ -66,3 +66,48 @@ class Square(Rectangle):
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save a list of objects to a file in CSV format.
+
+        Args:
+            list_objs (list): A list of object instances.
+        """
+        if list_objs is None:
+            list_objs = []
+
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode="w", newline="") as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if isinstance(obj, Rectangle):
+                    row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                elif isinstance(obj, Square):
+                    row = [obj.id, obj.size, obj.x, obj.y]
+                writer.writerow(row)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load a list of objects from a CSV file.
+
+        Returns:
+            A list of object instances.
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode="r", newline="") as file:
+                reader = csv.reader(file)
+                next(reader)  # Skip the header row
+                list_objs = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        obj = cls(width=int(row[1]), height=int(row[2]),
+                                  x=int(row[3]), y=int(row[4]), id=int(row[0]))
+                    elif cls.__name__ == "Square":
+                        obj = cls(size=int(row[1]), x=int(row[2]),
+                                  y=int(row[3]), id=int(row[0]))
+                    list_objs.append(obj)
+                return list_objs
+        except FileNotFoundError:
+            return []
