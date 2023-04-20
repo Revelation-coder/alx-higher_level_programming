@@ -14,6 +14,8 @@ class Square(Rectangle):
         """Overriding the __str__ method"""
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
+   
+    @property
     def size(self):
         """
         Getter for size
@@ -27,7 +29,8 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
-     def update(self, *args, **kwargs):
+   
+    def update(self, *args, **kwargs):
         """Update the attributes of the Square."""
         if args:
             attrs = ["id", "size", "x", "y"]
