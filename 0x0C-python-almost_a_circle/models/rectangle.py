@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """This module defines a Rectangle class which is a sub class of Base class"""
 from models.base import Base
+import json
+import csv
 
 
 class Rectangle(Base):

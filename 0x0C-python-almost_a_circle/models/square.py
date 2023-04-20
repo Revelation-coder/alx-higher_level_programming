@@ -2,6 +2,8 @@
 """Module documentation for Square class"""
 
 from models.rectangle import Rectangle
+import json
+import csv
 
 
 class Square(Rectangle):
