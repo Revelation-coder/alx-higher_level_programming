@@ -1,11 +1,5 @@
--- Script: Display average temperature (Fahrenheit) by city ordered by temperature (descending)
-
--- Set the database name
-SET @database_name = 'hbtn_0c_0';
-
--- Calculate average temperature by city
+-- Script: Display average temperature (Fahrenheit) by city ordered by temperature (descending order)
 SELECT city, AVG(temperature) AS avg_temperature
-FROM @database_name.temperatures
+FROM hbtn_0c_0.temperatures
 GROUP BY city
 ORDER BY avg_temperature DESC;
-
