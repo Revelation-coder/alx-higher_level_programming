@@ -8,4 +8,3 @@ if (isNaN(result)) {
   result = ('My number: ' + result);
 }
 console.log(result);
-

@@ -12,4 +12,3 @@ if (isNaN(x)) {
     console.log(string);
   }
 }
-
