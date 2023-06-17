@@ -13,10 +13,12 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(
+        host="localhost", port=3306, user=username,
+        passwd=password, db=database)
     cursor = db.cursor()
 
-    # Execute the query to select all cities with their corresponding state names
+    # Execute query to select all cities with their corresponding state names
     cursor.execute("""
         SELECT cities.id, cities.name, states.name
         FROM cities

@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     count = 0
     connect = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                             passwd=argv[2], db=argv[3], charset="utf8")
+                              passwd=argv[2], db=argv[3], charset="utf8")
     cursor = connect.cursor()
     cursor.execute("""SELECT cities.id, cities.name, states.name
     FROM cities
@@ -21,7 +21,7 @@ if __name__ == "__main__":
             if count > 0:
                 print(", ", end="")
             print(row[1], end="")
-            count +=1
+            count += 1
     print()
     cursor.close()
     connect.close()
