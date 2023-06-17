@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""City class definition
+"""
+City class definition
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
+
 
 class City(Base):
     """City class"""
