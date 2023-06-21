@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
-
+'''Module to lists all states with a name starting with N'''
 import MySQLdb
 from sys import argv
+
 
 '''
 lists all states with starting name with N
