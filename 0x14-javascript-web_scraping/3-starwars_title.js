@@ -1,89 +1,17 @@
 #!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
+// Script to print the title of a Star Wars movie based on the given movie ID.
 
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(JSON.parse(body).title);
-  }
-});#!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
 
-const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(JSON.parse(body).title);
-  }
-});#!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
+const movieId = process.argv[2];
 
-const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(JSON.parse(body).title);
-  }
-});#!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
+request(apiUrl, (error, response, body) => {
   if (error) {
-    console.error(error);
+    console.error('Error:', error);
   } else {
-    console.log(JSON.parse(body).title);
-  }
-});#!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
-
-const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(JSON.parse(body).title);
-  }
-});#!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
-
-const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(JSON.parse(body).title);
-  }
-});#!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
-
-const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(JSON.parse(body).title);
-  }
-});#!/usr/bin/node
-// prints the title of a Star Wars movie where the episode num matches given int
-
-const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(JSON.parse(body).title);
+    const movieData = JSON.parse(body);
+    console.log(movieData.title);
   }
 });
